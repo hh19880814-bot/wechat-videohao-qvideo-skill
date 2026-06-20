@@ -1,471 +1,385 @@
-# WeChat Videohao Q-Video Skill
+# WeChat / Douyin / Videohao Q-Video Skill
 
-A Codex Skill for turning long-form WeChat public-account articles into vertical short videos for 视频号, Douyin, TikTok-style feeds, and other mobile-first content channels.
+A public Codex Skill for turning long-form Chinese articles into polished vertical short videos.
 
-中文一句话：这是一个“公众号文章转视频号竖版短视频”的 Codex Skill。它把一篇文章拆成脚本、图解、动画、字幕、配音、BGM、封面和结尾，让内容创作者不用每次从零设计视频流程。
+中文一句话：这是一个把公众号文章、行业分析、产品解读、汽车评论等长文，稳定转换成竖版短视频的 Codex Skill。它不只是做幻灯片，而是把文章逻辑拆成“封面、图解、动画、字幕、配音、BGM、结尾、发布文案”的完整生产流程。
 
 ## What This Skill Does
 
-This Skill helps Codex convert an article into a complete vertical explainer video workflow.
-
-It is designed for creators who already have written content, especially analytical articles, and want to turn them into short videos without losing the article's logic.
-
-Instead of making a simple slideshow, it builds a structured video:
+This Skill helps Codex create a repeatable article-to-video workflow:
 
 ```text
-Full vertical cover
-        ↓
-Segmented article explainer
-        ↓
-Full vertical ending card
+Article
+-> storyboard
+-> narration
+-> Q-comic images
+-> animated explainer
+-> synced captions
+-> BGM mix
+-> upload-grade vertical MP4
 ```
 
-The body of the video uses a stable mobile-first stack:
+The default video structure is:
 
 ```text
-Top topic bar
-Current article Q-comic infographic
-Dark-tech animated explainer board
-Voice-synced bottom captions
+Full 9:16 Image 2 cover
+        ↓
+Body video stack
+        ↓
+Full 9:16 Image 2 ending card
 ```
 
-The key principle:
+The body stack is:
 
-> In every segment, the voiceover, Q-comic image, animated explainer, and captions must explain the same point at the same time.
+```text
+Compact topic bar
+Current-article Q-comic infographic
+Dark animated explainer board
+Bottom narration-synced subtitles
+```
 
-This prevents the common low-quality result where the audio talks about one thing, the image shows another, and the animation is just decorative.
+The key idea is simple:
 
-## Who This Is For
+> The voiceover, image, middle explainer, and subtitles should explain the same idea at the same time.
+
+That rule prevents the common AI-video problem where the audio says one thing, the image shows another, and the motion graphics are just decoration.
+
+## Who It Is For
 
 This Skill is useful for:
 
-- WeChat public-account writers who want to repurpose articles into 视频号 content.
-- Automotive commentators turning market analysis into short videos.
-- Product analysts explaining launches, pricing, strategy, user pain points, or industry competition.
-- Solo creators who want a repeatable video production workflow.
-- Small teams that need consistent daily short videos from written reports.
+- WeChat public-account writers repurposing articles into short videos.
+- Automotive commentators making daily market or product analysis videos.
+- Product analysts explaining launches, pricing, strategy, or user pain points.
 - AI content operators building article-to-video pipelines.
+- Small teams that need repeatable daily vertical-video production.
+- Solo creators who want consistent style without redesigning every episode.
 
-It was originally tuned for automotive industry commentary, but the structure can be adapted to:
+It was tuned through automotive commentary videos, but the structure can be adapted to:
 
-- AI tool tutorials;
-- consumer electronics analysis;
-- finance or business explainers;
-- SaaS product updates;
-- local service industry reports;
-- company newsletters;
-- educational micro-lessons;
-- personal IP commentary videos.
+- AI tool tutorials,
+- consumer electronics analysis,
+- finance or business explainers,
+- SaaS product updates,
+- company newsletters,
+- local service reports,
+- educational micro-lessons,
+- personal IP commentary.
 
-## What Problem It Solves
+## Problem It Solves
 
-Long articles often fail when moved to short video because:
+Long articles often fail when converted to short video because:
 
-- the script is too long;
-- the video becomes a boring PPT;
-- captions do not match the voice;
-- images are beautiful but do not explain the argument;
-- animated panels are generic and unrelated;
-- the cover is just a cropped screenshot;
-- the ending feels dead or unfinished;
+- the script is too long,
+- the video becomes a boring PPT,
+- captions do not match the voice,
+- images are nice but do not explain the argument,
+- animated panels are generic,
+- the cover is just a screenshot,
+- the ending feels unfinished,
 - every episode has a different visual style.
 
-This Skill turns the article into a repeatable production system:
+This Skill turns the process into a stable production system:
 
 1. Extract the article's core logic.
-2. Split it into 5-6 short-video segments.
-3. Write a natural-fast voiceover script.
-4. Generate article-specific Q-comic infographics.
-5. Build a dark-tech animated explanation layer.
+2. Split it into 5-6 short-video chapters.
+3. Write a natural voiceover script.
+4. Generate topic-specific Q-comic infographics.
+5. Build a dark animated logic board for each chapter.
 6. Sync captions with the spoken narration.
-7. Add a recognizable cover and ending card.
-8. Mix narration and BGM with voice in front.
-9. Render and QA the final video.
+7. Add a standalone cover and ending card.
+8. Loop and mix BGM under narration.
+9. Render, inspect, and deliver an upload-grade MP4.
 
-## What Value It Provides
+## Output Example Structure
 
-### 1. Content Strategy
-
-It forces the article to become a short-video argument:
-
-- what happened;
-- why it matters;
-- what the pressure or contradiction is;
-- what ordinary users should pay attention to;
-- what conclusion or action point remains.
-
-This makes the video easier to follow than a raw reading of the article.
-
-### 2. Visual Consistency
-
-Each episode uses the same visual architecture:
-
-- Q-comic article logic card;
-- dark-tech explainer panel;
-- synced caption bar;
-- full vertical cover;
-- fixed-style ending.
-
-This helps a creator build a recognizable video identity over time.
-
-### 3. Better Viewer Comprehension
-
-The video uses different layers for different jobs:
-
-- voiceover explains the story;
-- Q-comic card gives the viewer a quick visual summary;
-- animated board shows the logic path;
-- captions help viewers follow without full attention;
-- cover and ending make the video platform-ready.
-
-### 4. Faster Daily Production
-
-Once configured, the same workflow can be reused for daily articles. The creator only needs a new article and topic-specific visuals; the structure remains stable.
-
-### 5. Personal Voice and Brand
-
-The workflow supports local voice cloning and fixed BGM, so the output can feel like a personal creator channel rather than a generic AI slideshow.
-
-## Typical Use Cases
-
-### Daily WeChat Article to 视频号
-
-Input:
-
-- one finished WeChat article;
-- optional existing article images;
-- creator voice reference;
-- fixed BGM.
-
-Output:
-
-- vertical MP4;
-- standalone cover image;
-- ending card;
-- structured storyboard;
-- synced captions.
-
-### Automotive Market Commentary
-
-Good for topics like:
-
-- car model discontinuation;
-- price war;
-- dealer pressure;
-- EV charging infrastructure;
-- smart driving competition;
-- brand positioning;
-- sales ranking analysis.
-
-Example segment logic:
-
-```text
-Event -> Market pressure -> User decision -> Brand implication -> Final judgment
-```
-
-### Product or Industry Explainer
-
-Good for articles that explain:
-
-- why a product failed;
-- why a new feature matters;
-- how a business model changes;
-- what ordinary users should check before buying;
-- how a company strategy affects the market.
-
-### Knowledge Creator Workflow
-
-Good for creators who publish:
-
-- weekly insight videos;
-- AI tool explainers;
-- product teardown videos;
-- industry trend summaries;
-- short educational clips.
-
-## Tools Used In The Workflow
-
-This Skill is not tied to one rendering tool. It describes a coordinated production pipeline.
-
-Recommended tools:
-
-- **Codex Skills**: orchestrates the workflow and remembers production rules.
-- **WeChat article JSON / Markdown / draft text**: source content.
-- **ChatGPT Image 2 / Image2**: generates full vertical cover, Q-comic cards, and ending images.
-- **Qwen3 local voice cloning**: creates the creator-style voiceover from a local reference recording.
-- **HyperFrames**: builds HTML-based animated video compositions.
-- **Remotion**: optional alternative or companion for React-based video composition.
-- **GSAP**: controls motion, reveals, highlights, and timing inside HTML video compositions.
-- **ffmpeg**: mixes audio, loops BGM, extracts QA frames, and checks duration/silence.
-
-You can replace individual tools if your stack is different. The important part is the production logic:
-
-```text
-Article logic -> Storyboard -> Voice -> Image -> Animation -> Captions -> BGM -> QA -> MP4
-```
-
-## Output Structure
-
-A typical final episode includes:
+A typical output project may look like this:
 
 ```text
 assets/
   qcovers/
-    topic-vertical-cover-image2.png
-  qcards_image_two/
+    topic-cover-image2.png
+  qcards/
     segment-01.png
     segment-02.png
-    ...
   qendings/
     topic-ending-image2.png
-  narration.wav
-  ending-narration.wav
+  audio/
+    narration.wav
+    bgm.m4a
 
 data/
   storyboard.json
-  narration.txt
-  ending-narration.txt
   audio-sync.json
 
 renders/
-  topic-vertical-final.mp4
-  qc_frames/
-    first_frame.png
-    body_frame_early.png
-    body_frame_middle.png
-    ending_frame.png
+  topic-final-upload.mp4
+  qa-cover-frame.png
+  qa-body-frame.png
+  qa-ending-frame.png
 ```
 
-## Video Design Logic
+The exact folder names can change. The production logic matters more than the file layout.
 
-### Cover
+## Core Design Principles
 
-The cover is a complete `9:16` vertical Q-comic poster.
+### 1. Cover And Ending Are Real Posters
 
-It should contain:
+The cover and ending should be complete `9:16` Image 2 images.
 
-- large title;
-- sharp subtitle;
-- Q-style creator character;
-- article-specific visual metaphor;
-- 3-4 key evidence blocks;
-- bottom final judgment.
+Do not make them by:
 
-The first video frame should already show this cover. Avoid a black or dim fade-in before the cover, because short-video platforms may use the first frame as preview.
+- cropping horizontal cards,
+- stitching screenshots,
+- exporting HTML blocks,
+- reusing a body frame.
 
-### Body Q-Comic Card
+They should work as standalone shareable poster images.
 
-The top body image is not decoration. It is a visual article card.
+### 2. Multi-Platform By Default
 
-It should:
+The same video may be posted on WeChat Channels, Douyin, Xiaohongshu, Bilibili, TikTok-style feeds, or other platforms.
 
-- summarize the current segment;
-- use a Q-comic hand-drawn infographic style;
-- include short, readable Chinese keywords;
-- show one clear visual metaphor;
-- match the voiceover point.
+Therefore the image itself should not contain platform-specific wording unless the creator explicitly asks for a platform-specific variant.
 
-### Middle Explainer
+Avoid text like:
 
-The middle area is a dark-tech animated logic board.
+- `视频号解读`
+- `抖音专用`
+- `小红书笔记`
+- `快手`
+- `B站`
+- `TikTok`
 
-It can show:
+Use neutral labels instead:
 
-- pressure chains;
-- comparison paths;
-- conversion from old standard to new standard;
-- warning labels;
-- checklist flow;
-- capability bridge;
-- signal tracking;
-- evidence cards.
+- `本期解读`
+- `重点清单`
+- `风险清单`
+- `购车前先看`
+- `一图看懂`
 
-Avoid:
+This is especially important because image generation models may accidentally add platform labels into corner badges or stickers. Always inspect the generated image before rendering.
 
-- generic charts repeated in every segment;
-- decorative cars that do not explain anything;
-- old labels from previous articles;
-- empty panels at scene start;
-- text so faint that viewers cannot read it.
+### 3. Middle Explainer Is The Logic Layer
 
-### Captions
+The middle board is not a subtitle and not a decorative dashboard.
 
-Captions are real voice subtitles, not summaries.
+It should show:
 
-They should:
+- chapter title,
+- one summary sentence,
+- 3 nodes or checkpoints,
+- quick highlights that follow the narration.
 
-- use the exact narration text;
-- split into short spoken clauses;
-- appear as the voice reaches that phrase;
-- stay large and readable on mobile;
-- use a thin bottom strip so the main visual area remains spacious.
+The animation does not need word-perfect sync. It should be reasonably aligned with the voiceover and move fast enough for short-video pacing.
 
-### Ending
+### 4. Bottom Subtitle Is The Spoken Line
 
-The ending has a fixed structure but topic-specific content:
+The bottom subtitle strip should show the actual spoken narration clause.
 
-- final judgment;
-- 2-3 action/check points;
-- one comment question;
-- light follow/continue prompt.
+Do not put a separate summary there. The summary belongs in the middle explainer.
 
-It should also have a short ending voiceover, usually faster than the body narration:
+### 5. BGM Must Continue
 
-```text
-所以，<本期最终判断>。<本期互动问题>？评论区聊聊。
-```
+If the BGM file is shorter than the video, loop it. A common production bug is that BGM only plays for the first segment and disappears later. This Skill explicitly checks for that.
 
-## Installation
+## How To Install
 
-Clone the repository:
+Clone this repository:
 
 ```bash
 git clone https://github.com/hh19880814-bot/wechat-videohao-qvideo-skill.git
 ```
 
-Install it into Codex:
+Copy or symlink the Skill into your Codex skills folder:
 
 ```bash
-mkdir -p ~/.codex/skills
-cp -R wechat-videohao-qvideo-skill ~/.codex/skills/
+mkdir -p ~/.codex/skills/wechat-videohao-qvideo
+cp SKILL.md ~/.codex/skills/wechat-videohao-qvideo/SKILL.md
 ```
 
-Restart Codex or start a new thread.
+Restart Codex or refresh the Skill list if needed.
 
-## How To Trigger It
+## How To Call It
 
-Example prompts:
-
-```text
-Use the Videohao Q-video Skill to turn today's WeChat article into a vertical short video.
-```
+In Codex, you can say things like:
 
 ```text
-把这篇公众号文章按视频号 Q-video Skill 做成竖版短视频。
+Use wechat-videohao-qvideo to turn this WeChat article into a vertical short video.
 ```
 
 ```text
-调用这个 Skill，把汽车行业文章生成视频号成片，带封面、配音、字幕和结尾。
+按照 wechat-videohao-qvideo 这个 skill，把这篇公众号文章做成 9:16 视频。
 ```
 
-## What The User Needs To Provide
+```text
+用这个 skill 做一个汽车行业分析视频，封面、正文、结尾都要完整。
+```
+
+```text
+继续按这个 Q-video workflow，做今天这篇文章的视频。
+```
+
+If your Codex environment supports Skill metadata, the Skill can also trigger when the task mentions:
+
+- WeChat article to video,
+- 公众号文章转视频,
+- 视频号竖版视频,
+- 抖音短视频,
+- Q-comic infographic video,
+- dark middle explainer,
+- narration-synced captions.
+
+## What You Need To Provide
 
 At minimum:
 
-- article text or article JSON;
-- desired topic/title if there are multiple articles;
-- preferred duration range if different from default;
-- whether to use existing article images or regenerate all images.
+- article text, Markdown, JSON, or a WeChat draft export;
+- target topic or title;
+- desired publishing platform if it is platform-specific.
 
-For a full personal workflow:
+Recommended:
 
-- a voice reference recording;
-- a preferred BGM;
-- an example of accepted visual style;
-- local paths for the article project and video output project.
+- fixed creator voice reference,
+- preferred BGM,
+- previous accepted video sample,
+- existing Q-comic article images,
+- desired length.
 
-## Personal Assets And Privacy
+If you do not have all of these, the Skill can still guide the workflow. It will ask for missing assets instead of silently switching to unrelated placeholders.
 
-This repository does not include private assets.
+## Typical Workflow
 
-It does not commit:
+### Step 1: Read And Structure The Article
 
-- real voice recordings;
-- BGM audio;
-- article source files;
-- generated videos;
-- generated covers;
-- generated Q-comic images.
+Codex extracts:
 
-For the original local workflow, private assets are stored outside the repo. A user adapting this Skill should replace those paths with their own files:
+- what happened,
+- why it matters,
+- the central contradiction,
+- what users should pay attention to,
+- the final judgment.
+
+### Step 2: Create 5-6 Chapters
+
+Each chapter gets:
+
+- short title,
+- one summary sentence,
+- 3 small nodes,
+- narration paragraph,
+- subtitle clauses,
+- image direction,
+- middle explainer direction.
+
+### Step 3: Generate Images
+
+Use ChatGPT Image 2 / Image 2 for:
+
+- full vertical cover,
+- body Q-comic cards,
+- full vertical ending card.
+
+The style should be:
+
+- Q-style hand-drawn infographic,
+- stable creator character,
+- readable Chinese text,
+- visual metaphor,
+- article-specific logic,
+- no stale labels from old topics.
+
+### Step 4: Generate Voiceover
+
+Use a consistent creator voice when possible.
+
+If using local voice cloning, generate audio first and derive scene timing from actual audio durations. Do not rely only on estimated word count.
+
+### Step 5: Build The Body Video
+
+Default layout:
 
 ```text
-<your-voice-reference>.m4a
-<your-fixed-bgm>.m4a
-<your-article-source-folder>
-<your-video-output-folder>
+topic bar
+Q-comic card
+dark explainer
+caption strip
 ```
 
-## Example Configuration
+Keep the stack in the mobile-safe center area. Leave breathing room above and below so platform UI does not cover the core content.
 
-The original workflow used:
+### Step 6: Mix BGM And Render
+
+Recommended output:
+
+- `1080x1920`
+- H.264 video
+- AAC audio
+- about `10-12 Mbps` video bitrate for upload
+- BGM volume around `0.10-0.12` under narration
+
+### Step 7: QA
+
+Before delivery, inspect:
+
+- first frame,
+- early body frame,
+- middle body frame,
+- late body frame,
+- ending frame,
+- audio track,
+- BGM continuity,
+- subtitle readability,
+- platform-specific unwanted text.
+
+## Example Prompt To Codex
 
 ```text
-voice reference: creator-voice-reference.m4a
-BGM: creator-fixed-bgm.m4a
-BGM volume: about 0.12
-canvas: 1080x1920
-layout: center-safe vertical stack
-style: Q-comic article card + dark-tech explainer
-voice: natural-fast Chinese narration
+Use wechat-videohao-qvideo.
+
+Article title:
+德国公司想卖小米汽车？先看授权和风险
+
+Article summary:
+德国公司计划进口中国电动车，小米官方否认合作并启动法律程序。请把重点放在：海外热度、官方授权、非官方进口风险、售后质保、软件法规、本地服务体系。
+
+Requirements:
+- 9:16 vertical video
+- Image 2 cover and ending
+- Q-comic body cards
+- dark middle explainer
+- real narration subtitles at the bottom
+- BGM should loop through the whole video
+- do not put platform-specific words in the images
+- deliver MP4, short title, description, and tags
 ```
 
-Your own setup can replace all of these.
+## Final Delivery Checklist
 
-## Quality Checklist
+A finished video package should include:
 
-Before final delivery, check:
-
-- the article source is correct;
-- the storyboard is based on the current article;
-- the cover is a standalone full vertical image;
-- frame 0 directly shows the cover;
-- Q-comic body cards are not reused from old topics;
-- the middle explainer has visible content from scene start;
-- animation labels match the narration;
-- captions follow the voice clause by clause;
-- the voice has no awkward long silence;
-- BGM is audible but does not cover narration;
-- the ending card is complete and topic-specific;
-- the final MP4 and cover image are ready for publishing.
-
-## Common Failure Modes
-
-| Problem | Cause | Fix |
-|---|---|---|
-| Cover looks like a cropped article card | It was stitched or converted from a body image | Regenerate a full vertical Image2 cover |
-| Video feels like PPT | Middle board is static or generic | Use article-specific animated logic |
-| Captions do not match voice | Captions use summaries instead of narration | Rebuild captions from the exact voiceover |
-| Animation turns too late | Timing was planned before audio | Derive scene timing from real voice duration |
-| BGM is too loud | Music treated as equal to narration | Lower BGM, keep voice in front |
-| Q image and voice mismatch | Segment logic was not unified | Rebuild storyboard with one core point per segment |
+- final MP4,
+- short title,
+- video description,
+- topic tags,
+- optional standalone cover image,
+- confirmation that BGM continues,
+- confirmation that cover and ending contain no platform-specific text.
 
 ## Why This Matters
 
-Short videos are not just shorter articles. They need:
+The biggest value of this Skill is not one template. It is the production discipline:
 
-- faster opening judgment;
-- clearer visual hierarchy;
-- synchronized voice and text;
-- platform-safe layout;
-- recognizable creator style;
-- repeatable production discipline.
+- article logic first,
+- voice and visuals aligned,
+- cover and ending treated as real assets,
+- platform-safe image text,
+- audio checked before delivery,
+- upload version separated from preview version.
 
-This Skill packages those decisions into a reusable Codex workflow.
+That discipline is what makes AI-assisted short-video production feel less random and more like a repeatable creator workflow.
 
-The practical value is simple:
+## License
 
-> Turn written insight into a publishable short video without losing the original article's thinking.
-
-## Repository Contents
-
-```text
-SKILL.md   The actual Codex Skill
-README.md  Human-readable explanation
-.gitignore Prevents private media assets from being committed
-```
-
-## License / Reuse
-
-MIT License. You can adapt the workflow for your own article-to-video pipeline.
-
-Before reuse, replace:
-
-- voice reference;
-- BGM;
-- article source paths;
-- image style;
-- output project paths;
-- any creator-specific wording.
-
-The workflow is most valuable when customized to a creator's own voice, visual identity, and publishing rhythm.
+MIT. Use it, modify it, and adapt it to your own creator workflow.
